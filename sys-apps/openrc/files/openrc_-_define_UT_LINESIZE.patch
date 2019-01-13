@@ -1,0 +1,12 @@
+diff --git a/mk/cc.mk b/mk/cc.mk
+index 6d47aa..572b40 100644
+--- a/mk/cc.mk
++++ b/mk/cc.mk
+@@ -39,6 +39,6 @@ _CC_FLAGS_SH=	for f in ${_CCFLAGS}; do \
+ 		then printf "%s" "$$f "; fi \
+ 		done;
+ _CC_FLAGS:=	$(shell ${_CC_FLAGS_SH})
+-CFLAGS+=	${_CC_FLAGS}
++CFLAGS+=	${_CC_FLAGS} -DUT_LINESIZE=32
+ 
+ include ${MK}/debug.mk
